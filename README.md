@@ -1,1 +1,1 @@
-# Timups-online-shop
+# mentoring-simple-webpack-starter
