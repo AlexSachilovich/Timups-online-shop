@@ -4,6 +4,7 @@ export class App extends Component {
   render() {
     return `
        <t-header></t-header>
+       <t-main></t-main>
         `;
   }
 }
