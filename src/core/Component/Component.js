@@ -1,17 +1,29 @@
 export class Component extends HTMLElement {
   constructor() {
     super();
-    this.props = {};
     this.state = {};
+    this.props = {};
+    this.isShadow = false
   }
 
   setState(callback) {
     this.state = callback(this.state);
-    this.innerHTML = this.render();
+    if(this.isShadow) {
+      this.shadowRoot.innerHTML = this.render()
+    } else {
+      this.innerHTML = this.render()
+    }
   }
 
   connectedCallback() {
-    this.innerHTML = this.render();
+    if(this.isShadow) {
+      this.attachShadow({ mode: 'open' });
+      const tml = document.createElement("template");
+      tml.innerHTML = this.render()
+      this.shadowRoot.append(tml.content.cloneNode(true))
+    } else {
+      this.innerHTML = this.render()
+    }
     this.componentDidMount();
   }
 
@@ -30,8 +42,9 @@ export class Component extends HTMLElement {
     this.dispatchEvent(new CustomEvent(type, { bubbles: true, detail: props }));
   }
 
-  render() {}
   componentDidMount() {}
   componentWillUnmount() {}
   componentWillUpdate() {}
+  componentWillUnmount() {}
+  render() {}
 }

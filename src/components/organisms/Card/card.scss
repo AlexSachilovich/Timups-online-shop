@@ -42,7 +42,7 @@
   background: #3b4a6b;
 }
 
-.slider_section .row {
+.slider_section .row .t-card {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -173,7 +173,7 @@
   font-weight: 600;
 }
 
-.shop_section .box .new {
+.shop_section .box .btn {
   padding: 7px 15px;
   position: absolute;
   top: 0;
@@ -190,6 +190,10 @@
   -ms-flex-align: center;
   align-items: center;
   font-size: 15px;
+}
+
+.btn:hover {
+  background-color: #463d0c;
 }
 
 .shop_section .btn-box {
@@ -224,7 +228,7 @@
   color: #ffffff;
 }
 
-.about_section .row {
+.about_section .row .t-card {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -245,7 +249,7 @@
   max-width: 375px;
 }
 
-.about_section .detail-box p {
+.about_section p {
   margin-top: 15px;
 }
 
@@ -366,8 +370,14 @@
 .contact_section {
   position: relative;
 }
-
-.contact_section .row {
+.t-card {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.contact_section .row .t-card {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -433,6 +443,9 @@
   width: 100%;
 }
 
+.h-box {
+  font-size: 16px;
+}
 .client_section .box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -512,7 +525,7 @@
   margin: 0 5px;
 }
 
-.row {
+.row .t-card {
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;

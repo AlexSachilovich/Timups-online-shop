@@ -1,17 +1,16 @@
 import { Component } from "../../../core";
 import "./header.scss";
+import "../../../components";
 export class Header extends Component {
   render() {
     return `
           <header class="hero_area">
-            <!-- header section strats -->
             <header class="header_section">
               <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg custom_nav-container">
                   <a class="navbar-brand" href="index.html">
                     <span> Timups </span>
                   </a>
-      
                   <button
                     class="navbar-toggler"
                     type="button"fa-search
@@ -23,7 +22,6 @@ export class Header extends Component {
                   >
                     <span class=""> </span>
                   </button>
-      
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                       <li class="nav-item">
@@ -41,22 +39,11 @@ export class Header extends Component {
                         <a class="nav-link" href="contact.html">Contact Us</a>
                       </li>
                     </ul>
-                    <div class="user_option-box">
-                      <a href="">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                      </a>
-                      <a href="">
-                        <i class="fa fa-cart-plus" aria-hidden="true"></i>
-                      </a>
-                      <a href="">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                      </a>
-                    </div>
+                    <t-user-option-box></t-user-option-box>
                   </div>
                 </nav>
               </div>
             </header>
-            <!-- end header section -->
           </header>
         `;
   }
